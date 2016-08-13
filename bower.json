@@ -1,0 +1,29 @@
+{
+  "name": "github-repo-searcher",
+  "homepage": "https://github.com/deftone42/github-repo-searcher",
+  "author": "Eder Bodelon  <deftone42@gmail.com>",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-touch": "~1.4.3",
+    "angular-sanitize": "~1.4.3",
+    "angular-translate": "~2.8.1",
+    "angular-ui-router": "~0.2.13",
+    "angular-animate": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "underscore": "^1.8.3",
+    "angular-resource": "^1.5.8"
+  },
+  "resolutions": {
+    "angular": "^1.5.8"
+  }
+}

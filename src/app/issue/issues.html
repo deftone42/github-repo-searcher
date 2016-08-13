@@ -1,0 +1,9 @@
+<div class="issues-container">
+    <searcher search="vm.search"></searcher>
+    <div ng-show="vm.results">
+        We’ve found <span ng-bind="vm.results"></span> issues results
+    </div>
+    <div ng-repeat="issue in vm.issues">
+        <div issue="issue"></div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<form ng-submit="search(searchString)">
+    <div class="input-group">
+        <input type="text" class="form-control" ng-model="searchString">
+        <span class="input-group-btn">
+            <button class="btn btn-primary"
+                    ng-click="search(searchString)"
+                    ng-class="{ 'disabled' : searchString.length < 1 }"
+                    type="button">Search!</button>
+        </span>
+    </div>
+</form>

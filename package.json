@@ -1,0 +1,19 @@
+{
+  "name": "github-repo-searcher",
+  "version": "1.0.0",
+  "description": "Search github repositories and issues",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -a localhost -p 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deftone42/github-repo-searcher.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deftone42/github-repo-searcher/issues"
+  },
+  "homepage": "https://github.com/deftone42/github-repo-searcher#readme"
+}
