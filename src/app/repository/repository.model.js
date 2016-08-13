@@ -11,18 +11,17 @@
     /**
      * Constructor, with class Repository
      */
-    function Repository(name, fullName, description, url, owner, stargazers, forks,
-                        openIssues, watchers, cloneUrl, svnUrl) {
+    function Repository(fullName, description, url, stargazers, forks,
+                        openIssues, watchers, htmlUrl, cloneUrl, svnUrl) {
       // Public properties, assigned to the instance ('this')
-      this.name = name;
       this.fullName = fullName;
       this.description = description;
       this.url = url;
-      this.owner = owner;
       this.stargazers = stargazers;
       this.forks = forks;
       this.openIssues = openIssues;
       this.watchers = watchers;
+      this.htmlUrl = htmlUrl;
       this.cloneUrl = cloneUrl;
       this.svnUrl = svnUrl;
     }
@@ -33,15 +32,14 @@
      */
     Repository.build = function (data) {
       return new Repository(
-        data.name,
         data.full_name,
         data.description,
         data.url,
-        data.owner.login,
         data.stargazers_count,
         data.forks_count,
         data.open_issues_count,
         data.watchers_count,
+        data.html_url,
         data.clone_url,
         data.svn_url
       );

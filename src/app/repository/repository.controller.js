@@ -6,7 +6,7 @@
   angular.module('github-repo-searcher')
     .controller('RepositoryController', repositoryController);
 
-  function repositoryController($rootScope, $stateParams, repositoryService) {
+  function repositoryController($rootScope, $state, $stateParams, repositoryService) {
     var vm = this;
     vm.search = search;
 
@@ -22,6 +22,10 @@
       vm.searchString = "";
     }
 
+    /**
+     * Search repositories by name
+     * @param query
+     */
     function search(query) {
       $rootScope.$broadcast('loading', {active: true});
       repositoryService.getRepositories(query)
@@ -33,6 +37,8 @@
           console.log(err);
         })
         .finally(function() {
+          //We add the last search in the url to save it
+          $state.transitionTo('repositories', {q: query}, { notify: false });
           $rootScope.$broadcast('loading', {active: false});
         });
     }

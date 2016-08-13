@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
 
         <link rel="stylesheet" href="src/app/components/loading.css" />
+        <link rel="stylesheet" href="src/app/repository/repository.css" />
     </head>
     <body ng-cloak>
         <!--[if lt IE 10]>
@@ -15,7 +16,15 @@
         <!-- Spinner -->
         <loading></loading>
 
-        <div class="container" ui-view></div>
+        <div class="container">
+            <h1>Github Repo Searcher</h1>
+
+            <left-panel class="col-sm-3 col-xs-3"></left-panel>
+
+            <div class="col-sm-9 col-xs-9">
+                <div ui-view></div>
+            </div>
+        </div>
 
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -28,6 +37,7 @@
 
         <script src="src/app/app.js"></script>
         <script src="src/app/routes.js"></script>
+        <script src="src/app/components/left-panel.directive.js"></script>
         <script src="src/app/components/loading.directive.js"></script>
         <script src="src/app/components/searcher.directive.js"></script>
         <script src="src/app/utils/api.factory.js"></script>

@@ -6,7 +6,7 @@
   angular.module('github-repo-searcher')
     .controller('IssueController', issueController);
 
-  function issueController($rootScope, $stateParams, issueService) {
+  function issueController($rootScope, $state, $stateParams, issueService) {
     var vm = this;
     vm.search = search;
 
@@ -22,6 +22,10 @@
       vm.searchString = "";
     }
 
+    /**
+     * Search issues by name
+     * @param query
+     */
     function search(query) {
       $rootScope.$broadcast('loading', {active: true});
       issueService.getIssues(query)
@@ -33,6 +37,8 @@
           console.log(err);
         })
         .finally(function() {
+          //We add the last search in the url to save it
+          $state.transitionTo('issues', {q: query}, { notify: false });
           $rootScope.$broadcast('loading', {active: false});
         });
     }

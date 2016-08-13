@@ -1,0 +1,14 @@
+.repository {
+    border-bottom: 1px solid gray;
+    padding: 10px 0;
+}
+
+.repository .name {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.repository .description {
+    font-size: 14px;
+    color: #444444;
+}
