@@ -1,7 +1,7 @@
 # github-repo-searcher
 Search github repositories and issues.
 
-# Used Libraries
+# Libraries
 Angular, Bootstrap, ChartJS, Angular UI-Router, Underscore
 
 # To Install
