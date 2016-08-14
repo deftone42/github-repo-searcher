@@ -6,6 +6,14 @@
   angular.module('github-repo-searcher')
     .service('repositoryService', repositoryService);
 
+  /**
+   * Repository Service
+   * @param $q
+   * @param Repository
+   * @param apiFactory
+   * @param underscore
+   * @returns service object
+   */
   function repositoryService($q, Repository, apiFactory, underscore) {
     var resource = apiFactory.build('repositories').getResource();
 

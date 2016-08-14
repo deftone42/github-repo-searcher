@@ -6,6 +6,10 @@
   angular.module('github-repo-searcher')
     .directive('loading', loading);
 
+  /**
+   * Loading directive
+   * @returns loading directive
+   */
   function loading() {
 
     return {

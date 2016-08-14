@@ -1,7 +1,10 @@
 <ul class="nav nav-pills nav-stacked">
+    <li role="presentation">
+        <a ui-sref="repositories" ng-bind="::'Search'"></a>
+    </li>
     <li role="presentation"
-        ng-class="{ 'active' : vm.isActive(navItem.name) }"
-        ng-repeat="navItem in vm.navItems">
-        <a ng-click="vm.go(navItem.name)" ng-bind="navItem.value"></a>
+        ng-class="{ 'active' : vm.isActive(navItem.state) }"
+        ng-repeat="navItem in vm.navItems()">
+        <a ng-click="vm.go(navItem.state)" ng-bind="navItem.value"></a>
     </li>
 </ul>

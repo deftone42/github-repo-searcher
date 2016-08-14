@@ -6,6 +6,13 @@
   angular.module('github-repo-searcher')
     .controller('RepositoryController', repositoryController);
 
+  /**
+   * Repository Controller
+   * @param $rootScope
+   * @param $state
+   * @param $stateParams
+   * @param repositoryService
+   */
   function repositoryController($rootScope, $state, $stateParams, repositoryService) {
     var vm = this;
     vm.search = search;
@@ -15,11 +22,11 @@
     ////////////////////////////////////////////////////////////////////////////
 
     function init() {
+      vm.searchString = "";
+
       if($stateParams.q) {
         search($stateParams.q);
       }
-
-      vm.searchString = "";
     }
 
     /**

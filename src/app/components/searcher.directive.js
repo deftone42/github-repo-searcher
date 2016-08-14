@@ -6,6 +6,10 @@
   angular.module('github-repo-searcher')
     .directive('searcher', searcher);
 
+  /**
+   * Searcher directive
+   * @returns searcher directive
+   */
   function searcher() {
 
     return {

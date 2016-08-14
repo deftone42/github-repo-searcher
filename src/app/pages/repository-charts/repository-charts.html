@@ -1,0 +1,21 @@
+<div class="chart-container">
+    <h3 ng-bind="vm.repoName"></h3>
+    <div class="col-sm-12 col-xs-12">
+        <label>Repo Radar</label>
+        <canvas id="polar-area" class="chart chart-polar-area"
+                chart-data="vm.repo.data" chart-labels="vm.repo.labels">
+        </canvas>
+    </div>
+    <div class="col-sm-12 col-xs-12">
+        <label>Repo Doughnut</label>
+        <canvas id="doughnut" class="chart chart-doughnut"
+                chart-data="vm.repo.data" chart-labels="vm.repo.labels">
+        </canvas>
+    </div>
+    <div class="col-sm-12 col-xs-12">
+        <label>Issues State</label>
+        <canvas id="pie" class="chart chart-pie"
+                chart-data="vm.issues.data" chart-labels="vm.issues.labels">
+        </canvas>
+    </div>
+</div>

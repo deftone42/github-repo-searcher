@@ -1,9 +1,13 @@
 # github-repo-searcher
-Search github repositories and issues
+Search github repositories and issues.
+
+# Used Libraries
+Angular, Bootstrap, ChartJS, Angular UI-Router, Underscore
 
 # To Install
 Bower
 NPM
+Http-server (npm install -g http-server)
 
 # Run app
 npm install

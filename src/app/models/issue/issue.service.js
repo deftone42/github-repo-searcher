@@ -6,6 +6,14 @@
   angular.module('github-repo-searcher')
     .service('issueService', issueService);
 
+  /**
+   * Issue Service
+   * @param $q
+   * @param Issue
+   * @param apiFactory
+   * @param underscore
+   * @returns service object
+   */
   function issueService($q, Issue, apiFactory, underscore) {
     var resource = apiFactory.build('issues').getResource();
 
@@ -16,6 +24,11 @@
 
     //////////////////////////////////////////////////////////////////
 
+    /**
+     * Get issues by string param
+     * @param qParam
+     * @returns promise
+     */
     function getIssues(qParam) {
       var params = {
         q: qParam

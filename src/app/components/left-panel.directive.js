@@ -6,7 +6,14 @@
   angular.module('github-repo-searcher')
     .directive('leftPanel', leftPanel);
 
-  function leftPanel($state, $stateParams) {
+  /**
+   * Left Panel Directive
+   * @param $state
+   * @param $stateParams
+   * @param leftPanelService
+   * @returns directive
+   */
+  function leftPanel($state, $stateParams, leftPanelService) {
 
     return {
       restrict: 'E',
@@ -15,6 +22,9 @@
       controllerAs: 'vm'
     };
 
+    /**
+     * Left panel directive controller
+     */
     function leftPanelController() {
       var vm = this;
       vm.go = go;
@@ -25,22 +35,22 @@
       ///////////////////////////////////////////////////////////
 
       function init() {
-        vm.navItems = [{
-          name: 'repositories',
-          value: 'Repositories'
-        }, {
-          name: 'issues',
-          value: 'Issues'
-        }, {
-          name: 'charts',
-          value: 'Charts'
-        }];
+        vm.navItems = leftPanelService.getMenuNav;
       }
 
+      /**
+       * Redirect to the pressed state
+       * @param navItem
+       */
       function go(navItem) {
         $state.go(navItem, {q: $stateParams.q});
       }
 
+      /**
+       * Return if the nav item is the current state
+       * @param navItem
+       * @returns {boolean}
+       */
       function isActive(navItem) {
         return $state.current.name === navItem
       }

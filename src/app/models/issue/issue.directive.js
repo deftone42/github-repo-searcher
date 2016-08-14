@@ -6,6 +6,10 @@
   angular.module('github-repo-searcher')
     .directive('issue', issue);
 
+  /**
+   * Issue directive
+   * @returns Issue directive
+   */
   function issue() {
 
     return {
@@ -13,7 +17,7 @@
       scope: {
         issue: '='
       },
-      templateUrl: 'src/app/issue/issue.directive.html'
+      templateUrl: 'src/app/models/issue/issue.directive.html'
     };
   }
 }());

@@ -6,11 +6,16 @@
   angular.module('github-repo-searcher')
     .directive('repository', repository);
 
+  /**
+   * Repository Directive
+   * @param $state
+   * @returns directive
+   */
   function repository($state) {
 
     return {
       restrict: 'A',
-      templateUrl: 'src/app/repository/repository.directive.html',
+      templateUrl: 'src/app/models/repository/repository.directive.html',
       scope: {
         repository: '='
       },
@@ -22,8 +27,11 @@
 
       ////////////////////////////////
 
+      /**
+       * Redirect to the repository-issues page
+       */
       function seeIssues() {
-        $state.go('issues', {q: "repo:" + scope.repository.fullName});
+        $state.go('repo-issues', {q: scope.repository.fullName});
       }
     }
   }

@@ -2,11 +2,12 @@
 <html lang="en" ng-app="github-repo-searcher">
     <head>
         <meta charset="utf-8">
-        <title>Github Repo Searcher</title>
+        <title ng-bind="title"></title>
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
 
         <link rel="stylesheet" href="src/app/components/loading.css" />
-        <link rel="stylesheet" href="src/app/repository/repository.css" />
+        <link rel="stylesheet" href="src/app/models/repository/repository.css" />
+        <link rel="stylesheet" href="src/app/models/issue/issue.css" />
     </head>
     <body ng-cloak>
         <!--[if lt IE 10]>
@@ -17,7 +18,7 @@
         <loading></loading>
 
         <div class="container">
-            <h1>Github Repo Searcher</h1>
+            <h1 ng-bind="title"></h1>
 
             <left-panel class="col-sm-3 col-xs-3"></left-panel>
 
@@ -34,21 +35,28 @@
         <script src="bower_components/angular-translate/angular-translate.js"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
+        <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+        <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
 
         <script src="src/app/app.js"></script>
-        <script src="src/app/routes.js"></script>
+        <script src="src/app/config/config.js"></script>
+        <script src="src/app/config/routes.js"></script>
         <script src="src/app/components/left-panel.directive.js"></script>
+        <script src="src/app/components/left-panel.service.js"></script>
         <script src="src/app/components/loading.directive.js"></script>
         <script src="src/app/components/searcher.directive.js"></script>
         <script src="src/app/utils/api.factory.js"></script>
         <script src="src/app/utils/underscore.factory.js"></script>
-        <script src="src/app/issue/issue.model.js"></script>
-        <script src="src/app/issue/issue.service.js"></script>
-        <script src="src/app/issue/issue.controller.js"></script>
-        <script src="src/app/issue/issue.directive.js"></script>
-        <script src="src/app/repository/repository.model.js"></script>
-        <script src="src/app/repository/repository.service.js"></script>
-        <script src="src/app/repository/repository.controller.js"></script>
-        <script src="src/app/repository/repository.directive.js"></script>
+        <script src="src/app/filters/capitalize.js"></script>
+        <script src="src/app/models/issue/issue.model.js"></script>
+        <script src="src/app/models/issue/issue.directive.js"></script>
+        <script src="src/app/models/issue/issue.service.js"></script>
+        <script src="src/app/models/repository/repository.model.js"></script>
+        <script src="src/app/models/repository/repository.directive.js"></script>
+        <script src="src/app/models/repository/repository.service.js"></script>
+        <script src="src/app/pages/issues/issues.controller.js"></script>
+        <script src="src/app/pages/repositories/repositories.controller.js"></script>
+        <script src="src/app/pages/repository-charts/repository-charts.controller.js"></script>
+        <script src="src/app/pages/repository-issues/repository-issues.controller.js"></script>
     </body>
 </html>

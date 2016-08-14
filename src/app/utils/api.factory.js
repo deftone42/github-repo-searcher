@@ -6,6 +6,11 @@
   angular.module('github-repo-searcher')
     .factory('apiFactory', apiFactory);
 
+  /**
+   * Api Factory Class
+   * @param $resource
+   * @returns {ApiFactory}
+   */
   function apiFactory($resource) {
     var hostUrl = 'https://api.github.com/search/';
 

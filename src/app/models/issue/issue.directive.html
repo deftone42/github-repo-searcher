@@ -1,0 +1,24 @@
+<div class="issue">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <span class="state glyphicon"
+                  ng-class="issue.state === 'open' ? 'glyphicon-exclamation-sign' : 'glyphicon-ok'"
+                  title="{{issue.state === 'open' ? 'Open Issue' : 'Closed'}}"></span>
+            <a class="title"
+               ng-bind="issue.title"
+               ng-href="{{issue.url}}"
+               target="_blank"></a>
+
+            <div class="pull-right" ng-if="issue.comments > 0">
+                <span class="glyphicon glyphicon-comment" title="Comments"></span>
+                <span ng-bind="issue.comments"></span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12">
+            <div class="description">
+                <span ng-bind="'#' + issue.number"></span>
+                By <span ng-bind="issue.user"></span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -6,17 +6,22 @@
   angular.module('github-repo-searcher')
     .factory('Issue', issue);
 
+  /**
+   * Issue model
+   * @returns {Issue}
+   */
   function issue() {
 
     /**
      * Constructor, with class Repository
      */
-    function Issue(title, number, url, user, comments) {
+    function Issue(title, number, url, user, state, comments) {
       // Public properties, assigned to the instance ('this')
       this.title = title;
       this.number = number;
       this.url = url;
       this.user = user;
+      this.state = state;
       this.comments = comments;
     }
 
@@ -28,8 +33,9 @@
       return new Issue(
         data.title,
         data.number,
-        data.url,
+        data.html_url,
         data.user.login,
+        data.state,
         data.comments
       );
     };

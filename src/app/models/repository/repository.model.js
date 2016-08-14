@@ -6,13 +6,17 @@
   angular.module('github-repo-searcher')
     .factory('Repository', repository);
 
+  /**
+   * Repository model
+   * @returns {Repository}
+   */
   function repository() {
 
     /**
      * Constructor, with class Repository
      */
     function Repository(fullName, description, url, stargazers, forks,
-                        openIssues, watchers, htmlUrl, cloneUrl, svnUrl) {
+                        openIssues, watchers, htmlUrl) {
       // Public properties, assigned to the instance ('this')
       this.fullName = fullName;
       this.description = description;
@@ -22,8 +26,6 @@
       this.openIssues = openIssues;
       this.watchers = watchers;
       this.htmlUrl = htmlUrl;
-      this.cloneUrl = cloneUrl;
-      this.svnUrl = svnUrl;
     }
 
     /**
@@ -39,9 +41,7 @@
         data.forks_count,
         data.open_issues_count,
         data.watchers_count,
-        data.html_url,
-        data.clone_url,
-        data.svn_url
+        data.html_url
       );
     };
 
